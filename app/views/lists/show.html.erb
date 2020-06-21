@@ -1,1 +1,8 @@
 <h1><%= @list.title %></h1>
+<% if @cards.empty? %>
+    <h2>Your List is empty, Add an Item</h2>
+<% else %>
+    <% @cards.each do |card| %>
+        <%= card.body%>
+    <% end %>
+<% end %>
