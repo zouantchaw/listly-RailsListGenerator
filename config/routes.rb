@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :cards
   resources :lists
+
+  resources :lists, only: [:show, :index] do
+    resources :cards, only: [:new]
+  end 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :users, :controllers => {:registrations => 'registrations', :omniauth_callbacks => 'callbacks'}
 
