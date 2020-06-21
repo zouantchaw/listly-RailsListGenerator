@@ -1,2 +1,3 @@
-<h1>List: <%= @card.list.title %> </h1>
-<p><%= @card.body %></p>
+<h1>List: <%= link_to @card.list.title, list_path(@card.list) %> </h1>
+<p><%= @card.body %></p><br>
+<p> <%= link_to "Edit Item", edit_list_card_path(@card.list, @card) %></p>
