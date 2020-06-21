@@ -1,8 +1,10 @@
 <h1><%= @list.title %></h1>
 <% if @cards.empty? %>
-    <h2>Your List is empty, Add an Item</h2>
+    <p>List empty:</p>
 <% else %>
     <% @cards.each do |card| %>
         <%= card.body%>
     <% end %>
 <% end %>
+
+<h3><%= link_to "Add Item", new_card_path %>

@@ -5,6 +5,7 @@ class CardsController < ApplicationController
     end 
 
     def new 
+        binding.pry 
         @card = current_user.cards
     end 
 end
