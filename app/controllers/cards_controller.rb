@@ -19,10 +19,22 @@ class CardsController < ApplicationController
     end 
 
     def edit 
-        binding.pry
         list = current_user.lists.find_by(id: params[:list_id])
         @card = list.cards.find_by(id: params[:id])
     end 
+
+    def update
+        @card = Card.find(params[:id])
+
+        @card.update(card_params)
+
+        if @card.save
+            redirect_to @card 
+        else
+            render :edit 
+        end
+    end 
+
 
     private 
 
