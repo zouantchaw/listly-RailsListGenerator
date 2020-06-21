@@ -8,4 +8,10 @@ class CardsController < ApplicationController
         binding.pry 
         @card = current_user.cards
     end 
+
+    private 
+
+    def card_params 
+        params.require(:card).permit(:body, :list_id)
+    end 
 end

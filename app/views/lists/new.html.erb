@@ -2,6 +2,9 @@
 
 <%= form_for @list do |f| %>
     <%= f.label :title %>
+
+    <%= f.hidden_field :list_id %>
+
     <%= f.text_field :title %>
     <%= f.submit %>
 <% end %>
