@@ -5,8 +5,17 @@ class CardsController < ApplicationController
     end 
 
     def new 
-        binding.pry 
-        @card = current_user.cards
+        @card = Card.new(list_id: params[:list_id])
+    end 
+
+    def create 
+        @card = Card.new(card_params)
+
+        if @card.save
+            redirect_to @card.list 
+        else
+            render :new
+        end
     end 
 
     private 
