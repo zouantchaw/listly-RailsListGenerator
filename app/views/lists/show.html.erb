@@ -3,7 +3,7 @@
     <p>List empty:</p>
 <% else %>
     <% @cards.each do |card| %>
-        <%= card.body%><br>
+        <%= link_to card.body, card_path(card) %><br>
     <% end %>
 <% end %>
 
