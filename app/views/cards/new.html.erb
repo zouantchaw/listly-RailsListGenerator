@@ -1,0 +1,10 @@
+<h1>New List Item</h1>
+
+<%= form_for(@card) do |f| %>
+    <label>Item body:</label><br>
+
+    <%= f.hidden_field :list_id %>
+
+    <%= f.text_field :body %><br>
+    <%= f.submit  %>
+<% end %>
