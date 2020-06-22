@@ -1,5 +1,5 @@
 <h1>Create a List</h1>
-<p><%= link_to "Cancel", "/" %> </p>
+<p><%= link_to "Cancel", lists_path %> </p>
 <%= form_for @list do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>

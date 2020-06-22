@@ -5,6 +5,7 @@ class CardsController < ApplicationController
     end 
 
     def new 
+        binding.pry 
         @card = Card.new(list_id: params[:list_id])
     end 
 
