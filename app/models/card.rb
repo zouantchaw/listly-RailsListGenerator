@@ -2,7 +2,6 @@ class Card < ApplicationRecord
     belongs_to :list
 
     def self.delete_list_cards(cards)
-        binding.pry
-        cards.destroy
+        cards.each {|card| card.destroy}
     end 
 end
