@@ -5,8 +5,11 @@ class CardsController < ApplicationController
     end 
 
     def new 
-        binding.pry 
-        @card = Card.new(list_id: params[:list_id])
+        if params[:list_id] && !List.exists?(params[:list_id])
+            redirect_to lists_path, alert: "List not found."
+        else 
+            @card = Card.new(list_id: params[:list_id])
+        end 
     end 
 
     def create 
