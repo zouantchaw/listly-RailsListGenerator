@@ -19,7 +19,6 @@ class CardsController < ApplicationController
     end 
 
     def edit 
-        binding.pry
         if params[:list_id]
             list = current_user.lists.find_by(id: params[:list_id])
             if list.nil?
