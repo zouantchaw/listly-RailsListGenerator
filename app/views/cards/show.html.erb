@@ -1,3 +1,4 @@
 <h1>List: <%= link_to @card.list.title, list_path(@card.list) %> </h1>
 <p><%= @card.body %></p><br>
-<p> <%= link_to "Edit Item", edit_list_card_path(@card.list, @card) %></p>
+<p> <%= link_to "Edit Item", edit_list_card_path(@card.list, @card) %></p><br>
+<p><%= link_to "Delete Item,"  @card.destroy%> </p>
