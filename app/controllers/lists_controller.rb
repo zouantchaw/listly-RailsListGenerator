@@ -24,6 +24,7 @@ class ListsController < ApplicationController
     end 
 
     def edit 
+        binding.pry
         @list = current_user.lists.find(params[:id])
     end 
 

@@ -49,7 +49,7 @@ class CardsController < ApplicationController
         @card = current_user.cards.find_by(id: params[:id])
         @card.destroy
         flash[:notice] = "Item Deleted"
-        redirect_to @card.list 
+        redirect_to @card.list  
     end 
 
 

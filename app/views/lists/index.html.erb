@@ -2,7 +2,7 @@
 
 <% @lists.each do |list| %>
     <div>
-        <%= link_to list.title, list_path(list) %>
+        <p><%= link_to list.title, list_path(list) %>(<%= link_to "Edit", edit_list_path %>)</p>
     </div>
 <% end %>
 
