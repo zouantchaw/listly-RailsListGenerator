@@ -1,6 +1,5 @@
 <h1>List: <%= link_to @card.list.title, list_path(@card.list) %> </h1>
 <p><%= @card.body %></p><br>
 <p> <%= link_to "Edit Item", edit_list_card_path(@card.list, @card) %></p><br>
-<p><%= link_to "Delete", controller: "cards", action: "destroy", id: @card
- %> </p>
+<%= link_to "Delete Item", @card, class: "delete_link", method: :delete %>
 <p><%# link_to "Delete Item,"  delete_path%> </p>
