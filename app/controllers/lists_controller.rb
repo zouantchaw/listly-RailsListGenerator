@@ -40,7 +40,7 @@ class ListsController < ApplicationController
     def destroy 
         @list = current_user.lists.find(params[:id])
         #@list.cards.destroy this doesnt work so im going to create a delete_list_cards method in the Cards controller to handle that job
-        delete_list_cards()
+        Card.delete_list_cards(@list.cards)
         binding.pry
         @list.destroy 
         flash[:notice] = "List deleted."
