@@ -28,9 +28,8 @@ class CardsController < ApplicationController
                 redirect_to list_cards_path(list), alert: "Post not found." if @card.nil?
             end
         else 
-            @card = Card.find(params[:id]) #I dont need this. I should def take it out.
+            @card = Card.find(params[:id]) 
         end 
-        @card = list.cards.find_by(id: params[:id])
     end 
 
     def update
