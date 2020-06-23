@@ -1,7 +1,4 @@
 <h1>Editing <%= @list.title %></h1>
 
-<%= form_for @list do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.submit %>
-<% end %>
+<%= render "from" %>
+<p><%= link_to "Cancel", lists_path %> </p>
