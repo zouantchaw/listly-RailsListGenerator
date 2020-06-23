@@ -3,11 +3,9 @@
 <% if @cards.empty? %>
     <p>List empty:</p>
 <% else %>
-    <ul>
     <% @cards.each do |card| %>
-        <li><%= link_to card.body, card_path(card) %>(<%= link_to "Edit", edit_card_path(card) %>)(<%= link_to "Delete", card, method: :delete %>)</li>
+        <%= link_to card.body, card_path(card) %>(<%= link_to "Edit", edit_card_path(card) %>)(<%= link_to "Delete", card, method: :delete %>)<br>
     <% end %>
-    </ul>
 <% end %>
 
 <h3><%= link_to "Add Item", new_list_card_path(@list) %></h3>

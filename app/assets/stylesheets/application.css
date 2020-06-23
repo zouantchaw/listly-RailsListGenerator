@@ -135,7 +135,7 @@
 
   /* Nav styling */
 
-  ul {
+  nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -143,19 +143,35 @@
     background-color: #f1f1f1;
   }
   
-  li a {
+   ul li a {
     display: block;
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
   }
   
-  li a.active {
+   ul li a.active {
     background-color: #4CAF50;
     color: white;
   }
   
-  li a:hover:not(.active) {
+   ul li a:hover:not(.active) {
     background-color: #555;
     color: white;
   }
+
+    /* Buttons styling */
+
+    .bouncy{
+       animation:bouncy 5s infinite linear;
+       position:relative;
+      }
+      @keyframes bouncy {
+       0%{top:0em}
+       40%{top:0em}
+       43%{top:-0.9em}
+       46%{top:0em}
+       48%{top:-0.4em}
+       50%{top:0em}
+       100%{top:0em;}
+      }

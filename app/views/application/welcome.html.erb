@@ -1,4 +1,9 @@
-<h1>Welcome to My List App</h1>
 
-<%= link_to "My Lists", lists_path %> <br>
-<%= link_to "Create New Lists", new_list_path %> <br>
+<% if @current_user == nil%>
+    <h1>Sign up or login</h1>
+    <p>Start creating lists </p>
+<% else %>
+    <h1>Welcome</h1>
+    <p><%= link_to "My Lists", lists_path %> <br>
+    <%= link_to "Create New Lists", new_list_path %> <br>
+<% end %>
