@@ -1,6 +1,6 @@
 <h1><%= @list.title %></h1>
 <% if @list.tags.empty? %>
-    <%= link_to "Add Tags", tags_path %>
+    <%= link_to "Add Tags", new_tag_path(@list) %>
 <% else %>
         <% @list.tags.each do |tags| %>
         <%= tags%>
