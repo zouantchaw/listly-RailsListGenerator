@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_171724) do
+ActiveRecord::Schema.define(version: 2020_07_13_173842) do
 
   create_table "cards", force: :cascade do |t|
     t.text "body"
@@ -20,10 +20,8 @@ ActiveRecord::Schema.define(version: 2020_07_13_171724) do
   end
 
   create_table "cards_lists", id: false, force: :cascade do |t|
-    t.integer "card_id", null: false
     t.integer "list_id", null: false
-    t.index ["card_id"], name: "index_cards_lists_on_card_id"
-    t.index ["list_id"], name: "index_cards_lists_on_list_id"
+    t.integer "card_id", null: false
   end
 
   create_table "lists", force: :cascade do |t|
