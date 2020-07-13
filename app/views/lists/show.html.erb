@@ -1,4 +1,11 @@
 <h1><%= @list.title %></h1>
+<% if @list.tags.empty? %>
+    <%= link_to "Add Tags", tags_path %>
+<% else %>
+        <% @list.tags.each do |tags| %>
+        <%= tags%>
+    <% end %>
+<% end %>
 <p><%= link_to "My Lists", lists_path %> </p>
 <% if @cards.empty? %>
     <p>List empty:</p>

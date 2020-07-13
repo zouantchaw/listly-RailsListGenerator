@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_012715) do
+ActiveRecord::Schema.define(version: 2020_07_13_182707) do
 
   create_table "cards", force: :cascade do |t|
     t.text "body"
@@ -22,6 +22,19 @@ ActiveRecord::Schema.define(version: 2020_06_17_012715) do
   create_table "lists", force: :cascade do |t|
     t.string "title"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lists_tags", id: false, force: :cascade do |t|
+    t.integer "list_id", null: false
+    t.integer "tag_id", null: false
+    t.index ["list_id", "tag_id"], name: "index_lists_tags_on_list_id_and_tag_id"
+    t.index ["tag_id", "list_id"], name: "index_lists_tags_on_tag_id_and_list_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

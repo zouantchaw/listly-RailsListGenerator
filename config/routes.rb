@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tags
   get '/welcome', to: 'application#welcome', as: "welcome_page"
   root to: 'application#welcome'
   devise_scope :user do
