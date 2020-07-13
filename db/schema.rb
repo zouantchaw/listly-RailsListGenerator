@@ -10,18 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_173842) do
+ActiveRecord::Schema.define(version: 2020_06_17_012715) do
 
   create_table "cards", force: :cascade do |t|
     t.text "body"
     t.integer "list_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "cards_lists", id: false, force: :cascade do |t|
-    t.integer "list_id", null: false
-    t.integer "card_id", null: false
   end
 
   create_table "lists", force: :cascade do |t|
