@@ -1,4 +1,4 @@
-# Property Manager: Landlord App
+# Listly: List App
 
 This web application was created to for users to create Lists and store list items in each list.
 
