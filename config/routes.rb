@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   end
 
   resources :cards
-  resources :lists
 
-  resources :lists, only: [:show, :index] do
+  resources :lists do
     resources :cards, only: [:new, :edit, :update, :destroy]
+    resources :tags, only: [:new, :edit, :update, :destroy, :create]
   end 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_for :users, :controllers => {:registrations => 'registrations', :omniauth_callbacks => 'callbacks'}

@@ -1,0 +1,11 @@
+<h1>New Tag</h1>
+<p>For: <%= link_to @list.title, list_path(@list) %> </p>
+<%= form_for(@tag) do |f| %>
+    <label>Tag name:</label><br>
+
+    <%= hidden_field_tag "list_id", @list.id %>
+
+    <%= f.text_field :title %><br>
+    <%= f.submit  %>
+<% end %>
+<p><%= link_to "Cancel", list_path(@list) %> </p>
