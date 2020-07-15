@@ -46,9 +46,9 @@ class ListsController < ApplicationController
     end 
 
     def search 
-        binding.pry 
         @tag = Tag.find(params[:id])
-        @lists = Tag.search_tags(@tag.title).first.lists
+        @tag_lists = Tag.search_tags(@tag.title)
+        binding.pry
     end 
 
     private 
