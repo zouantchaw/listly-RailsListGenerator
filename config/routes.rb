@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+get '/search/:id', to: 'lists#search'
+
   resources :tags
   get '/welcome', to: 'application#welcome', as: "welcome_page"
   root to: 'application#welcome'
